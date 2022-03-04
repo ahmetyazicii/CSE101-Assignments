@@ -1,0 +1,30 @@
+load R0,061h
+load R1,045h
+load R2,016h
+load R3,004h
+load R4,0FFh
+load R5,01
+xor R0,R0,R4
+xor R1,R1,R4
+xor R2,R2,R4
+xor R3,R3,R4
+move RA,R0
+load R0,0
+addi R3,R3,R5
+jmpEQ R3=R0,a
+jmp b
+a:addi R2,R2,R5
+jmpEQ R2=R0,c
+jmp d
+c:addi R1,R1,R5
+d:jmpEQ R1=R0,e
+jmp f
+e:addi RA,RA,R5
+f:load R9,0
+b:move R0,RA
+load R6,0
+move R4,R6
+move R5,R6
+move RA,R6
+halt
+
